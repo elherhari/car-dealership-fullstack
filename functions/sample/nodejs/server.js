@@ -14,8 +14,8 @@ const dealershipsData = JSON.parse(
   fs.readFileSync(path.join(__dirname, 'dealerships.json'), 'utf8')
 );
 
-// Mock reviews database
-const reviewsDB = [
+// In-memory reviews database (in production, use MongoDB)
+let reviewsDB = [
   {
     id: 1,
     dealership: 1,
@@ -68,22 +68,25 @@ const reviewsDB = [
 
 // Root endpoint
 app.get('/', (req, res) => {
-  res.json({ message: 'Dealership API is running', version: '1.0' });
+  res.json({ 
+    message: 'Dealership API is running',
+    version: '1.0',
+    endpoints: [
+      'GET /dealerships/get',
+      'GET /dealerships/dealer/:id',
+      'GET /dealerships/state/:state',
+      'GET /reviews/dealer/:id',
+      'POST /reviews/add'
+    ]
+  });
 });
 
-// TÂCHE 8: Get reviews for a dealer
-app.get('/reviews/dealer/:id', (req, res) => {
-  const dealerId = parseInt(req.params.id);
-  const reviews = reviewsDB.filter(r => r.dealership === dealerId);
-  res.json(reviews);
-});
-
-// TÂCHE 9: Get all dealerships
+// Get all dealerships
 app.get('/dealerships/get', (req, res) => {
   res.json(dealershipsData.dealerships);
 });
 
-// TÂCHE 10: Get dealership by ID
+// Get dealership by ID
 app.get('/dealerships/dealer/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const dealer = dealershipsData.dealerships.find(d => d.id === id);
@@ -95,7 +98,7 @@ app.get('/dealerships/dealer/:id', (req, res) => {
   }
 });
 
-// TÂCHE 11: Get dealerships by state
+// Get dealerships by state
 app.get('/dealerships/state/:state', (req, res) => {
   const state = req.params.state;
   const dealers = dealershipsData.dealerships.filter(
@@ -104,7 +107,25 @@ app.get('/dealerships/state/:state', (req, res) => {
   res.json(dealers);
 });
 
+// Get reviews for a dealer
+app.get('/reviews/dealer/:id', (req, res) => {
+  const dealerId = parseInt(req.params.id);
+  const reviews = reviewsDB.filter(r => r.dealership === dealerId);
+  res.json(reviews);
+});
+
+// Add a new review
+app.post('/reviews/add', (req, res) => {
+  const newReview = {
+    id: reviewsDB.length + 1,
+    ...req.body
+  };
+  
+  reviewsDB.push(newReview);
+  res.json({ success: true, review: newReview });
+});
+
 app.listen(PORT, () => {
-  console.log(`Dealership API listening on port ${PORT}`);
-  console.log(`Test: http://localhost:${PORT}/dealerships/get`);
+  console.log(`✅ Dealership API listening on port ${PORT}`);
+  console.log(`📍 Test: http://localhost:${PORT}/dealerships/get`);
 });
