@@ -1,0 +1,48 @@
+{
+  "dealerships": [
+    {
+      "id": 1,
+      "city": "Detroit",
+      "state": "Michigan",
+      "address": "123 Auto Boulevard",
+      "zip": "48201",
+      "lat": 42.3314,
+      "long": -83.0458,
+      "short_name": "Motor City Cars",
+      "full_name": "Motor City Cars - Detroit"
+    },
+    {
+      "id": 2,
+      "city": "Los Angeles",
+      "state": "California",
+      "address": "456 Sunset Strip",
+      "zip": "90028",
+      "lat": 34.0522,
+      "long": -118.2437,
+      "short_name": "LA Auto Group",
+      "full_name": "Los Angeles Auto Group"
+    },
+    {
+      "id": 3,
+      "city": "Houston",
+      "state": "Texas",
+      "address": "789 Space City Drive",
+      "zip": "77001",
+      "lat": 29.7604,
+      "long": -95.3698,
+      "short_name": "Texas Motors",
+      "full_name": "Texas Motors - Houston"
+    },
+    {
+      "id": 4,
+      "city": "Ann Arbor",
+      "state": "Michigan",
+      "address": "321 University Avenue",
+      "zip": "48104",
+      "lat": 42.2808,
+      "long": -83.7430,
+      "short_name": "Ann Arbor Autos",
+      "full_name": "Ann Arbor Auto Dealership"
+    }
+  ]
+}
