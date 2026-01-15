@@ -21,56 +21,99 @@
     <div class="container">
         <h1>Contact Us</h1>
         
-        <div class="contact-info">
-            <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=800" alt="Contact" class="hero-image">
-            
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>📧 Email</h3>
-                    <p>support@bestcars.com</p>
-                    <p>sales@bestcars.com</p>
+        <div class="contact-hero">
+            <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=800" alt="Contact us" class="hero-image">
+            <p class="hero-text">We're here to help! Get in touch with our team.</p>
+        </div>
+
+        <div class="contact-content">
+            <div class="contact-info-section">
+                <h2>Get In Touch</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="icon">📧</div>
+                        <h3>Email</h3>
+                        <p><strong>General Inquiries:</strong></p>
+                        <p>support@bestcars.com</p>
+                        <p><strong>Sales Department:</strong></p>
+                        <p>sales@bestcars.com</p>
+                        <p><strong>Technical Support:</strong></p>
+                        <p>tech@bestcars.com</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon">📱</div>
+                        <h3>Phone</h3>
+                        <p><strong>Main Line:</strong></p>
+                        <p>+1 (555) 123-4567</p>
+                        <p><strong>Sales:</strong></p>
+                        <p>+1 (555) 123-4568</p>
+                        <p><strong>Support:</strong></p>
+                        <p>+1 (555) 123-4569</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon">📍</div>
+                        <h3>Address</h3>
+                        <p><strong>Headquarters:</strong></p>
+                        <p>123 Auto Boulevard</p>
+                        <p>Detroit, MI 48201</p>
+                        <p>United States</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon">🕐</div>
+                        <h3>Business Hours</h3>
+                        <p><strong>Monday - Friday:</strong></p>
+                        <p>9:00 AM - 6:00 PM EST</p>
+                        <p><strong>Saturday:</strong></p>
+                        <p>10:00 AM - 4:00 PM EST</p>
+                        <p><strong>Sunday:</strong> Closed</p>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <h3>📱 Phone</h3>
-                    <p>Main: +1 (555) 123-4567</p>
-                    <p>Sales: +1 (555) 123-4568</p>
-                </div>
-                <div class="info-card">
-                    <h3>📍 Address</h3>
-                    <p>123 Auto Boulevard</p>
-                    <p>Detroit, MI 48201</p>
-                    <p>United States</p>
-                </div>
-                <div class="info-card">
-                    <h3>🕐 Business Hours</h3>
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
-                    <p>Saturday: 10:00 AM - 4:00 PM EST</p>
-                    <p>Sunday: Closed</p>
-                </div>
+            </div>
+
+            <div class="contact-form-section">
+                <h2>Send Us a Message</h2>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="john.doe@example.com">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required placeholder="How can we help?">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Tell us more about your inquiry..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">📨 Send Message</button>
+                </form>
             </div>
         </div>
 
-        <div class="contact-form">
-            <h2>Send us a Message</h2>
-            <form>
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject *</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+        <div class="map-section">
+            <h2>Visit Us</h2>
+            <div class="map-placeholder">
+                <p>📍 123 Auto Boulevard, Detroit, MI 48201</p>
+                <p>Find us easily accessible from major highways</p>
+            </div>
         </div>
     </div>
 
