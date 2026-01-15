@@ -22,4 +22,8 @@ urlpatterns = [
     path('get_cars/', views.get_cars, name='get_cars'),
     path('get_all_carmakes/', views.get_all_carmakes, name='get_all_carmakes'),
     path('analyze_sentiment/', views.analyze_sentiment, name='analyze_sentiment'),
+    path('fetchDealers', views.fetch_dealers, name='fetch_dealers'),
+    path('fetchDealer/<int:dealer_id>', views.fetch_dealer, name='fetch_dealer'),
+    path('fetchDealers/<str:state>', views.fetch_dealers_by_state, name='fetch_dealers_by_state'),
+    path('analyze/<str:review_text>', views.analyze_review, name='analyze_review'),
 ]

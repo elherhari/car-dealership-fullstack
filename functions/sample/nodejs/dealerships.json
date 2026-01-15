@@ -43,6 +43,18 @@
       "long": -83.7430,
       "short_name": "Ann Arbor Autos",
       "full_name": "Ann Arbor Auto Dealership"
-    }
-  ]
+    },
+    {
+      "id": 5,
+      "city": "Wichita",
+      "state": "Kansas",
+      "address": "500 Prairie Street",
+      "zip": "67202",
+      "lat": 37.6872,
+      "long": -97.3301,
+      "short_name": "Kansas Auto Mall",
+      "full_name": "Kansas Auto Mall - Wichita"
+   }
+]
 }
+  

@@ -176,3 +176,28 @@ def analyze_sentiment(request):
         })
     
     return JsonResponse({"error": "POST method required"})
+def fetch_dealers(request):
+    """Fetch all dealerships"""
+    try:
+        response = requests.get("http://localhost:3030/dealerships/get")
+        return JsonResponse({"dealerships": response.json()})
+    except:
+        return JsonResponse({"dealerships": []})
+def fetch_dealer(request, dealer_id):
+    """Fetch dealer by ID"""
+    try:
+        response = requests.get(f"http://localhost:3030/dealerships/dealer/{dealer_id}")
+        return JsonResponse(response.json())
+    except:
+        return JsonResponse({"error": "Dealer not found"})
+def fetch_dealers_by_state(request, state):
+    """Fetch dealers by state"""
+    try:
+        response = requests.get(f"http://localhost:3030/dealerships/state/{state}")
+        return JsonResponse({"dealerships": response.json()})
+    except:
+        return JsonResponse({"dealerships": []})
+def analyze_review(request, review_text):
+    """Analyze sentiment of review text"""
+    sentiment = analyze_review_sentiments(review_text)
+    return JsonResponse({"sentiment": sentiment})
