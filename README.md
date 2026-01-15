@@ -1,4 +1,7 @@
-# Full-Stack Car Dealership Application
+# car-dealership-fullstack
+
+**Repository Name:** car-dealership-fullstack  
+**Project Name:** Best Cars - Full Stack Car Dealership Platform# Full-Stack Car Dealership Application
 
 ## Project Information
 - **Repository Name:** car-dealership-fullstack
