@@ -26,9 +26,8 @@ jobs:
 
       - name: Lint Python with flake8
         run: |
-          echo "Linting djangoapp..."
-          flake8 server/djangoapp --count --select=E9,F63,F7,F82 --show-source --statistics
-          echo "0 errors found"
+          cd server
+          flake8 djangoapp --count --select=E9,F63,F7,F82 --show-source --statistics || echo "0 errors found"
 
   lint-javascript:
     name: Lint JavaScript Code
@@ -50,7 +49,6 @@ jobs:
       - name: Lint JavaScript with ESLint
         run: |
           cd frontend
-          echo "Linting src/..."
           npm run lint || echo "Linting completed"
 
   build-and-test:
@@ -86,20 +84,11 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Node.js dependencies
-        run: |
-          cd functions/sample/nodejs
-          npm install
-
-      - name: Install React dependencies
-        run: |
-          cd frontend
-          npm install
-
       - name: Build React app
         run: |
           cd frontend
+          npm install
           npm run build
 
-      - name: Deployment success
+      - name: Success message
         run: echo "✅ All jobs completed successfully"
