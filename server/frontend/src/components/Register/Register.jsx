@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import './Register.css';
 
 const Register = () => {
@@ -45,7 +45,7 @@ const Register = () => {
   return (
     <div className="register-container">
       <div className="register-card">
-        <h1>🚗 Register for Best Cars</h1>
+        <h1>ðŸš— Register for Best Cars</h1>
         <p className="subtitle">Create your account to start shopping</p>
         
         {message && <div className="message">{message}</div>}
