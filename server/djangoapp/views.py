@@ -71,7 +71,7 @@ def registration(request):
         return JsonResponse({"userName": username, "status": "Authenticated"})
 
 def get_cars(request):
-    """Get all car models"""
+    """Get all car models with makes"""
     if CarModel.objects.count() == 0:
         return JsonResponse({"CarModels": []})
     
@@ -80,12 +80,9 @@ def get_cars(request):
     
     for car in car_models:
         cars_list.append({
-            "id": car.id,
-            "name": car.name,
-            "make": car.car_make.name,
-            "type": car.type,
-            "year": car.year,
-            "dealer_id": car.dealer_id
+            "CarMake": car.car_make.name,
+            "CarModel": car.name,
+            "CarYear": car.year
         })
     
     return JsonResponse({"CarModels": cars_list})

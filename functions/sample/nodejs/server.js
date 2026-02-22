@@ -104,7 +104,7 @@ app.get('/dealerships/state/:state', (req, res) => {
   const dealers = dealershipsData.dealerships.filter(
     d => d.state.toLowerCase() === state.toLowerCase()
   );
-  res.json(dealers);
+  res.json(dealers);  // ← Retourne l'array directement, PAS {"dealerships": dealers}
 });
 
 // Get reviews for a dealer

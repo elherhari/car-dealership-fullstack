@@ -18,7 +18,6 @@ const PostReview = () => {
   });
 
   useEffect(() => {
-    // Check if user is logged in
     const username = sessionStorage.getItem('username');
     if (!username) {
       alert('Please login to post a review');
@@ -28,13 +27,11 @@ const PostReview = () => {
 
     setFormData(prev => ({ ...prev, name: username }));
 
-    // Fetch dealer details
     fetch(`http://localhost:8000/djangoapp/dealer/${id}/`)
       .then(response => response.json())
       .then(data => setDealer(data))
       .catch(error => console.error('Error:', error));
 
-    // Fetch available cars
     fetch('http://localhost:8000/djangoapp/get_cars/')
       .then(response => response.json())
       .then(data => setCars(data.CarModels || []))
@@ -118,7 +115,7 @@ const PostReview = () => {
                   required={formData.purchase}
                 >
                   <option value="">Select Make</option>
-                  {[...new Set(cars.map(c => c.make))].map(make => (
+                  {[...new Set(cars.map(c => c.CarMake))].map(make => (
                     <option key={make} value={make}>{make}</option>
                   ))}
                 </select>
@@ -134,9 +131,9 @@ const PostReview = () => {
                 >
                   <option value="">Select Model</option>
                   {cars
-                    .filter(c => c.make === formData.car_make)
-                    .map(car => (
-                      <option key={car.id} value={car.name}>{car.name}</option>
+                    .filter(c => c.CarMake === formData.car_make)
+                    .map((car, index) => (
+                      <option key={index} value={car.CarModel}>{car.CarModel}</option>
                     ))}
                 </select>
               </div>
@@ -151,9 +148,9 @@ const PostReview = () => {
                 >
                   <option value="">Select Year</option>
                   {cars
-                    .filter(c => c.make === formData.car_make && c.name === formData.car_model)
-                    .map(car => (
-                      <option key={car.id} value={car.year}>{car.year}</option>
+                    .filter(c => c.CarMake === formData.car_make && c.CarModel === formData.car_model)
+                    .map((car, index) => (
+                      <option key={index} value={car.CarYear}>{car.CarYear}</option>
                     ))}
                 </select>
               </div>
